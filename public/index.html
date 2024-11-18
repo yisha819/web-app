@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+  <div class="container">
+    <h1>Task Manager</h1>
+
+    <!-- Add New Task Form -->
+    <section class="form-section">
+      <h2>Add New Task</h2>
+      <form id="addTaskForm">
+        <input type="text" id="taskTitle" name="title" placeholder="Task Title" required />
+        <textarea id="taskDescription" name="description" placeholder="Task Description"></textarea>
+        <input type="date" id="taskDeadline" name="deadline" required />
+        <select id="taskPriority" name="priority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <button type="submit">Add Task</button>
+      </form>
+    </section>
+
+    <!-- Task List Section -->
+    <section class="task-list-section">
+      <h2>Tasks</h2>
+      <ul id="taskList">
+        <!-- Dynamic list of tasks will be inserted here -->
+      </ul>
+    </section>
+
+    <!-- Edit Task Modal -->
+    <section id="editTaskModal" class="modal">
+      <div class="modal-content">
+        <h2>Edit Task</h2>
+        <form id="editTaskForm">
+          <input type="hidden" id="editTaskId" name="id" />
+          <input type="text" id="editTaskTitle" name="title" placeholder="Task Title" required />
+          <textarea id="editTaskDescription" name="description" placeholder="Task Description"></textarea>
+          <input type="date" id="editTaskDeadline" name="deadline" required />
+          <select id="editTaskPriority" name="priority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+          <button type="submit">Update Task</button>
+          <button type="button" id="closeEditModalBtn">Cancel</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
