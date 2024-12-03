@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <header class="text-center my-6">
+        <h1 class="text-4xl font-bold mb-3 underline underline-offset-8 decoration-cyan-300">MOVIE WATCHLIST</h1>
+        <p class="text-gray-400">Discover and organize the movies you’re excited to watch, and effortlessly remove them once you’ve viewed them.</p>
+        <button id="addBtnMovie" class="mt-4 px-6 py-3 bg-blue-600 rounded-3xl border-2 border-cyan-400 hover:bg-blue-700">+ Add Movie</button>
+    </header>
+
+    <main id="library" class="grid gap-4 max-w-4xl mx-auto p-4">
+        <!-- Movie cards will be rendered here -->
+    </main>
+
+    <!-- Add Movie Modal -->
+    <div id="movie-modal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center">
+        <div class="bg-slate-700 text-white p-6 rounded-lg w-96">
+            <h2 class="text-xl font-bold mb-4 text-center">Add a New Movie</h2>
+            <form id="movie-form" class="space-y-4">
+                <div>
+                    <label for="movie-name" class="block font-medium">Name</label>
+                    <input type="text" id="movie-name" class="w-full border rounded p-2 text-black" required>
+                </div>
+                <div>
+                    <label for="movie-description" class="block font-medium">Description</label>
+                    <textarea id="movie-description" class="w-full border rounded p-2 text-black" rows="4" required></textarea>
+                </div>
+                <div class="flex justify-between">
+                    <button type="submit" id="saveBtn" class="px-4 py-2 bg-blue-500 text-white rounded shadow hover:bg-blue-300">Save</button>
+                    <button type="button" id="close-modal-btn" class="px-4 py-2 bg-gray-300 text-gray-700 rounded shadow hover:bg-gray-400">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Movie Modal -->
+    <div id="edit-modal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center">
+        <div class="bg-slate-700 text-white p-6 rounded-lg w-96">
+            <h2 class="text-xl font-bold mb-4 text-center">Edit Movie</h2>
+            <form id="edit-form">
+                <div>
+                    <label for="edit-movie-name" class="block font-medium">Movie Name</label>
+                    <input type="text" id="edit-movie-name" class="w-full border rounded p-2 text-black" required />
+                </div>
+                <div>
+                    <label for="edit-movie-description" class="block font-medium">Description</label>
+                    <textarea id="edit-movie-description"class="w-full border rounded p-2 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"  rows="4"  required placeholder="Add a synopsis of a movie or just add the genre of the movie"></textarea>
+                </div>
+                <div class="flex justify-between">
+                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded shadow hover:bg-blue-300">Save Changes</button>
+                    <button type="button" id="close-edit-modal-btn" class="px-4 py-2 bg-gray-300 text-gray-700 rounded shadow hover:bg-gray-400">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-modal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center">
+        <div class="bg-neutral-700 text-black p-6 rounded-lg w-96">
+            <h2 class="text-xl font-bold mb-4">Remove Movie</h2>
+            <p>Are you sure you want to remove this movie?</p>
+            <div class="flex justify-between mt-4">
+                <button id="confirm-delete-btn" class="px-4 py-2 bg-red-500 text-white rounded shadow hover:bg-red-300">Yes, Remove</button>
+                <button id="cancel-delete-btn" class="px-4 py-2 bg-gray-300 text-gray-700 rounded shadow hover:bg-gray-400">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="test.js"></script>
+</html>
