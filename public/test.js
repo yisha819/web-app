@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Fetch movies from backend
     const fetchMovies = async () => {
       try {
-        const response = await fetch("http://localhost:3000/items");
+        const response = await fetch("https://web-app-bbmb.onrender.com/items");
         if (!response.ok) throw new Error("Failed to fetch movies");
   
         const data = await response.json();
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
       };
   
       try {
-        const response = await fetch("http://localhost:3000/items", {
+        const response = await fetch("https://web-app-bbmb.onrender.com/items", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
       };
   
       try {
-        const response = await fetch(`http://localhost:3000/items/${movieToEdit.id}`, {
+        const response = await fetch(`https://web-app-bbmb.onrender.com/items/${movieToEdit.id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!movieToDelete) return;
   
       try {
-        const response = await fetch(`http://localhost:3000/items/${movieToDelete}`, {
+        const response = await fetch(`https://web-app-bbmb.onrender.com/items/${movieToDelete}`, {
           method: "DELETE",
         });
   
